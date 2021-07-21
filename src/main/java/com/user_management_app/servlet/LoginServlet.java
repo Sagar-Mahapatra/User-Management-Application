@@ -53,6 +53,8 @@ public class LoginServlet extends HttpServlet {
 //fetching request data
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+                out.print("LoginServlet modified...");
+
 
 //calling getUser()			
 		user = new Db_Operations(ConnectionProvider.getConnection()).getUser(email, password);
