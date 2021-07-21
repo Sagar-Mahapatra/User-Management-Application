@@ -50,9 +50,13 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		User user;
 
+                System.out.println("LoginServlet executed...");
+
 //fetching request data
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+                
+
 
 //calling getUser()			
 		user = new Db_Operations(ConnectionProvider.getConnection()).getUser(email, password);
@@ -70,6 +74,8 @@ public class LoginServlet extends HttpServlet {
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("login.html");
 			requestDispatcher.include(request, response);
 		}
+
+                
 
 	}
 
